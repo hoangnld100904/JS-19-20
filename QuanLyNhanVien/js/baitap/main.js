@@ -22,12 +22,12 @@ function themNhanVien(){
     var nv = new NhanVien(user, name, email, password, date, basicSalary, position, workTime)
     nv.xepLoai();
     nv.tongLuong()
-    dsnv.themNV(nv);   
+    dsnv.themNV(nv);  
     hienThiTable(dsnv.mangNV)
 }
 function hienThiTable(array){
     var content="" //String chứa HTML content
-    array.map(function(nv){
+    array.map(function(nv, index){
         content +=
        ` <tr>
             <td>${nv.user}</td>
@@ -38,9 +38,20 @@ function hienThiTable(array){
             <td>${nv.totalSalary}</td>
             <td>${nv.rank}</td>
             <td>
-                <button class="btn btn-danger" >Xóa</button>
+                <button class="btn btn-danger" onclick="xoaNhanVien(${index})" >Xóa</button>
             </td>
         </tr>`
     });
     GetELE("tableDanhSach").innerHTML= content;
+}
+//Find user
+function timNhanVien(array, user){
+    var nv = array.find(function(nv){
+        return nv.user == user
+    })
+    return nv
+} 
+function xoaNhanVien(index){
+    dsnv.mangNV.splice(index,1)
+    hienThiTable(dsnv.mangNV)
 }
