@@ -50,8 +50,22 @@ function timNhanVien(array, user){
         return nv.user == user
     })
     return nv
-} 
+}
+//Delete user
 function xoaNhanVien(index){
     dsnv.mangNV.splice(index,1)
     hienThiTable(dsnv.mangNV)
+}
+//Update user
+//Sort by ranking
+function locTheoXepLoai(){ 
+    var rank= GetELE('searchName').value;
+    if (rank==''){
+        hienThiTable(dsnv.mangNV)
+        return;
+    }
+    var output= dsnv.mangNV.filter(function(nv){
+        return nv.rank == rank;
+    })
+    hienThiTable(output)
 }
