@@ -124,9 +124,11 @@
 						<div class="row mb-3">
 							<div class="col">
 								<div class="input-group">
-									<input type="text" class="form-control" placeholder="Loại nhân viên" id="searchName">
+									<input type="text" class="form-control" placeholder="Loại nhân viên"
+										id="searchName">
 									<div class="input-group-prepend">
-										<span class="input-group-text" id="btnTimNV" onclick="locTheoXepLoai()"><i class="fa fa-search"></i></span>
+										<span class="input-group-text" id="btnTimNV" onclick="locTheoXepLoai()"><i
+												class="fa fa-search"></i></span>
 									</div>
 								</div>
 							</div>
@@ -142,14 +144,14 @@
 									<th>Họ và tên</th>
 									<th>Email</th>
 									<th>Ngày làm</th>
-									<th>Chức vụ</th>									
+									<th>Chức vụ</th>
 									<th>Tổng lương</th>
 									<th>Xếp loại</th>
 									<th><em class="fa fa-cog"></em></th>
 								</tr>
 							</thead>
 							<tbody id="tableDanhSach">
-								
+
 							</tbody>
 						</table>
 					</div>
@@ -246,7 +248,7 @@
 
 							<span class="sp-thongbao" id="tbNgay"></span>
 						</div>
-						
+
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-prepend">
@@ -269,13 +271,13 @@
 									<option>Nhân viên</option>
 								</select>
 							</div>
-
 							<span class="sp-thongbao" id="tbChucVu"></span>
 						</div>
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-prepend">
-									<span class="input-group-text"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
+									<span class="input-group-text"><i class="fa fa-clock-o"
+											aria-hidden="true"></i></span>
 								</div>
 								<input type="text" name="gioLam" id="gioLam" class="form-control input-sm"
 									placeholder="Giờ làm">
@@ -288,8 +290,10 @@
 
 				<!-- Modal footer -->
 				<div class="modal-footer" id="modal-footer">
-					<button id="btnThemNV" type="button" class="btn btn-success" onclick="themNhanVien()">Thêm người dùng</button>
-					<button id="btnCapNhat" type="button" class="btn btn-success" onclick="capNhatNhanVien()">Cập nhật</button>
+					<button id="btnThemNV" type="button" class="btn btn-success" onclick="themNhanVien()">Thêm người
+						dùng</button>
+					<button id="btnCapNhat" type="button" class="btn btn-success" onclick="capNhatNhanVien()">Cập
+						nhật</button>
 					<button id="btnDong" type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
 				</div>
 
@@ -327,7 +331,9 @@
 	<!-- Main JS -->
 	<script src="./js/baitap/NV.js"></script>
 	<script src="./js/baitap/Danhsachnhanvien.js"></script>
+	<script src="./js/baitap/Validation.js"></script>
 	<script src="./js/baitap/main.js"></script>
+
 </body>
 
 </html>

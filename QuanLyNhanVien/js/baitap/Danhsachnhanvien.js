@@ -21,6 +21,9 @@ function DanhSachNhanVien(){
         if(viTri > -1){
             //tìm thấy
             dsnv.mangNV[viTri] = nhanVienMoi
+            return
         }
+        alert("Nhân viên không tồn tại");
+        return
     }
 }
