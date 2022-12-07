@@ -43,20 +43,39 @@ function themNhanVien() {
     var position = GetELE('chucvu').value;
     var workTime = GetELE('gioLam').value;
     var isValid = true; //Khởi tạo biến điều kiện để check thông tin của form\
+    console.log(isValid)
+    console.log(validation.checkUser(user, "Tài khoản bao gồm 4-6 ký tự, bao gồm chữ, số, dấu gạch dưới", "tbTKNV"))
     isValid &= validation.checkEmpty(user, "Tài khoản không được để trống", "tbTKNV") && validation.checkUser(user, "Tài khoản bao gồm 4-6 ký tự, bao gồm chữ, số, dấu gạch dưới", "tbTKNV") && validation.checkExistedUser(user, "Tài khoản đã tồn tại", "tbTKNV", dsnv.mangNV);
+    console.log(isValid)
     isValid &= validation.checkEmpty(name, "Tên không được bỏ trống", "tbTen") && validation.checkName(name, "Tên chỉ bao gồm chữ", "tbTen");
+    console.log(isValid)
+
     isValid &= validation.checkEmpty(email, "Email không được bỏ trống", "tbEmail") && validation.checkEmail(email, "Email không đúng định dạng", "tbEmail");
+    console.log(isValid)
+
     isValid &= validation.checkEmpty(password, "Mật khẩu không được để trống", "tbMatKhau") && validation.checkPassword(password, "Mật khẩu phải bao gồm 1 chữ hoa, 1 số, 1 ký tự đặc biệt", "tbMatKhau");
+    console.log(isValid)
+
     isValid &= validation.checkEmpty(basicSalary, "Lương không được để trống", "tbLuongCB") && validation.checkBasicSalary(basicSalary, "Lương cơ bản từ 1 triệu đến 20 triệu", "tbLuongCB");
+    console.log(isValid)
+
     isValid &= validation.checkPosition(position, "Vui lòng chọn chức vụ", "tbChucVu");
+    console.log(isValid)
+
     isValid &= validation.checkEmpty(workTime, "Giờ làm không được bỏ trống", "tbGiolam") && validation.checkWorkTime(workTime, "Giờ làm phải từ 80 đến 200 giờ", "tbGiolam");
+    console.log(isValid)
+
     if (isValid) {
+    console.log(dsnv.mangNV);
+
         var nv = new NhanVien(user, name, email, password, date, Number(basicSalary), position, Number(workTime))
+        console.log(nv)
         nv.xepLoai();
         nv.tongLuong()
         dsnv.themNV(nv);
-        hienThiTable(dsnv.mangNV)
+        // hienThiTable(dsnv.mangNV)
         setLocalStorage()
+        getLocalStorage()
     }
 }
 function hienThiTable(array) {
@@ -120,6 +139,7 @@ function locTheoXepLoai() {
 //Delete user
 function xoaNhanVien(index) {
     dsnv.xoaNhanVien(index)
+    console.log(dsnv.mangNV)
     // hienThiTable(dsnv.mangNV)
     setLocalStorage()
     getLocalStorage()

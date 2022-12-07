@@ -16,6 +16,8 @@ function Validation(){
             document.getElementById(spanID).innerHTML=msg;
             document.getElementById(spanID).style.display="block";
             return false;
+        } else{
+            return true;
         }
     }
     this.checkUser=function(value, msg, spanID){

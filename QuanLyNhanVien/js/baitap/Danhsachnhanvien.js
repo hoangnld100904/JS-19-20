@@ -4,6 +4,7 @@ function DanhSachNhanVien(){
     //Phương thức
     this.themNV= function(nv){
         this.mangNV.push(nv)
+        console.log(this.mangNV);
     }
     this.timViTri=function(user){
         var viTri=-1;
